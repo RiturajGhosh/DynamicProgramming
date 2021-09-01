@@ -10,7 +10,7 @@ import knapsack.KnapsackAbs;
  *
  */
 public class SubsetSum extends KnapsackAbs {
-	private boolean[][] t;
+	protected boolean[][] t;
 
 	public SubsetSum(int[] wt, int n, int sum) {
 		super(wt, n, sum);

@@ -104,6 +104,15 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 		}
 	}
 
+	/**
+	 * Method to return count the number of subsets with the target sum
+	 * 
+	 * @param array of Items
+	 * @param n     is size of the array
+	 * @param sum   is the target sum
+	 * @return the count of subsets which can be formed such that summation of each
+	 *         subset element results to target sum
+	 */
 	private int topDownCountOfSubset(int[] array, int n, int sum) {
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= sum; j++) {

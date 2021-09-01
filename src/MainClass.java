@@ -3,6 +3,7 @@ import knapsack.KnapsackAbs;
 import knapsack.KnapsackAbs.Type;
 import knapsack.zeroone.CountOfSubsetsToGivenSum;
 import knapsack.zeroone.KnapSack;
+import knapsack.zeroone.MinSubsetSumDiff;
 import knapsack.zeroone.SubsetSum;
 
 public class MainClass {
@@ -19,6 +20,8 @@ public class MainClass {
 		System.out.println(countOfSubsetSumToGivenSum.orchestrateBetweenApproaches(Type.RECURSIVE_APPROACH));
 		System.out.println(countOfSubsetSumToGivenSum.orchestrateBetweenApproaches(Type.MEMOIZED_APPROACH));
 		System.out.println(countOfSubsetSumToGivenSum.orchestrateBetweenApproaches(Type.TOP_DOWN_APPROACH));
+		MinSubsetSumDiff minSubsetSumDiff = new MinSubsetSumDiff(new int[] { 1, 5, 6, 11 }, 4);
+		System.out.println(minSubsetSumDiff.minDiff());
 	}
 
 }
