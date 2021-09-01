@@ -25,8 +25,8 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 
 	@Override
 	protected int memoizedApproach() {
-		// TODO Auto-generated method stub
-		return 0;
+		count = 0;
+		return memoizedSoluiton(wt, n, W);
 	}
 
 	@Override
@@ -37,8 +37,12 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 
 	@Override
 	protected void initializeMemoizationTable() {
-		// TODO Auto-generated method stub
-
+		this.t = new int[n + 1][W + 1];
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= W; j++) {
+				t[i][j] = -1;
+			}
+		}
 	}
 
 	@Override
@@ -48,6 +52,7 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 	}
 
 	/**
+	 * Method to return count the number of subsets with the target sum
 	 * 
 	 * @param array of Items
 	 * @param n     is size of the array
@@ -66,4 +71,24 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 		}
 	}
 
+	private int memoizedSoluiton(int[] array, int n, int sum) {
+		if (sum == 0) {
+			t[n][sum] = 1;
+			return t[n][sum];
+		}
+		if (n == 0) {
+			t[n][sum] = 0;
+			return t[n][sum];
+		}
+		if (sum < 0) {
+			return 0;
+		}
+		if (t[n][sum] != -1) {
+			return t[n][sum];
+		} else {
+			t[n][sum] = memoizedSoluiton(array, n - 1, sum) + memoizedSoluiton(array, n - 1, sum - array[n - 1]);
+			return t[n][sum];
+		}
+
+	}
 }
