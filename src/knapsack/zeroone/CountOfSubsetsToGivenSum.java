@@ -31,8 +31,7 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 
 	@Override
 	protected int topDownApproach() {
-		// TODO Auto-generated method stub
-		return 0;
+		return topDownCountOfSubset(wt, n, W);
 	}
 
 	@Override
@@ -47,8 +46,13 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 
 	@Override
 	protected void initializeTopDownTable() {
-		// TODO Auto-generated method stub
-
+		this.t = new int[n + 1][W + 1];
+		for (int j = 0; j <= W; j++) {
+			t[0][j] = 0;
+		}
+		for (int i = 0; i <= n; i++) {
+			t[i][0] = 1;
+		}
 	}
 
 	/**
@@ -71,6 +75,15 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 		}
 	}
 
+	/**
+	 * Method to return count the number of subsets with the target sum
+	 * 
+	 * @param array of Items
+	 * @param n     is size of the array
+	 * @param sum   is the target sum
+	 * @return the count of subsets which can be formed such that summation of each
+	 *         subset element results to target sum
+	 */
 	private int memoizedSoluiton(int[] array, int n, int sum) {
 		if (sum == 0) {
 			t[n][sum] = 1;
@@ -89,6 +102,18 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 			t[n][sum] = memoizedSoluiton(array, n - 1, sum) + memoizedSoluiton(array, n - 1, sum - array[n - 1]);
 			return t[n][sum];
 		}
-
 	}
+
+	private int topDownCountOfSubset(int[] array, int n, int sum) {
+		for (int i = 1; i <= n; i++) {
+			for (int j = 1; j <= sum; j++) {
+				if ((j - array[n - 1]) < 0) {
+					t[i][j] = t[i - 1][j];
+				} else
+					t[i][j] = t[i - 1][j] + t[i - 1][j - array[i - 1]];
+			}
+		}
+		return t[n][W];
+	}
+
 }

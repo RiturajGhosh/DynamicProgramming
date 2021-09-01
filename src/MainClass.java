@@ -18,6 +18,7 @@ public class MainClass {
 		KnapsackAbs countOfSubsetSumToGivenSum = new CountOfSubsetsToGivenSum(new int[] { 1, 2, 2, 2 }, 4, 4);
 		System.out.println(countOfSubsetSumToGivenSum.orchestrateBetweenApproaches(Type.RECURSIVE_APPROACH));
 		System.out.println(countOfSubsetSumToGivenSum.orchestrateBetweenApproaches(Type.MEMOIZED_APPROACH));
+		System.out.println(countOfSubsetSumToGivenSum.orchestrateBetweenApproaches(Type.TOP_DOWN_APPROACH));
 	}
 
 }
