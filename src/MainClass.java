@@ -26,6 +26,8 @@ public class MainClass {
 		CountOfSubsetsToGivenDiff countOfSubsetsToGivenDiff = new CountOfSubsetsToGivenDiff(new int[] { 1, 8, 5, 4, 7 },
 				5, 3);
 		System.out.println(countOfSubsetsToGivenDiff.count());
+		KnapsackAbs unboundedKnapSack = new KnapSack(new int[] { 1, 2, 3 }, new int[] { 2, 2, 3 }, 3, 3);
+		System.out.println(unboundedKnapSack.orchestrateBetweenApproaches(Type.TOP_DOWN_APPROACH));
 
 	}
 
