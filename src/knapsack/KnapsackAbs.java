@@ -4,7 +4,6 @@ package knapsack;
  * This abstract class can be extended to any 2d knapsack solution class
  * 
  * @author Rituraj
- *
  */
 public abstract class KnapsackAbs {
 

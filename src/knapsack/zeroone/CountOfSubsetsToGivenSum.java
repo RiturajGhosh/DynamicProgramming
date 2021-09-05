@@ -116,7 +116,7 @@ public class CountOfSubsetsToGivenSum extends KnapsackAbs {
 	private int topDownCountOfSubset(int[] array, int n, int sum) {
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= sum; j++) {
-				if ((j - array[n - 1]) < 0) {
+				if ((j - array[i - 1]) < 0) {
 					t[i][j] = t[i - 1][j];
 				} else
 					t[i][j] = t[i - 1][j] + t[i - 1][j - array[i - 1]];

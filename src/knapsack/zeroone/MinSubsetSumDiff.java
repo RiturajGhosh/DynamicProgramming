@@ -3,10 +3,11 @@ package knapsack.zeroone;
 import java.util.stream.IntStream;
 
 /**
-* Solution of finding the minimum difference between any two subsets present in array, using subset sum problem
-*
-* @author Rituraj
-*/
+ * Solution of finding the minimum difference between any two subsets present in
+ * array, using subset sum problem
+ *
+ * @author Rituraj
+ */
 public class MinSubsetSumDiff extends SubsetSum {
 
 	public MinSubsetSumDiff(int[] array, int n) {
