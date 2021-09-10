@@ -1,6 +1,7 @@
 
 import knapsack.KnapsackAbs;
 import knapsack.KnapsackAbs.Type;
+import knapsack.unbounded.CoinChangeMinNumber;
 import knapsack.unbounded.RodCuttingProblem;
 import knapsack.unbounded.UnboundedKnapsack;
 import knapsack.zeroone.CountOfSubsetsToGivenDiff;
@@ -33,6 +34,8 @@ public class MainClass {
 		KnapsackAbs rodCuttingProblem = new RodCuttingProblem(new int[] { 1, 2, 3 }, new int[] { 2, 2, 3 }, 3, 4);
 		System.out.println(rodCuttingProblem.orchestrateBetweenApproaches(Type.TOP_DOWN_APPROACH));
 		System.out.println(rodCuttingProblem.orchestrateBetweenApproaches(Type.RECURSIVE_APPROACH));
+		CoinChangeMinNumber coinChangeMinNumber = new CoinChangeMinNumber(new int[] { 1, 3, 5, 7 }, 15);
+		System.out.println(coinChangeMinNumber.minNumberOfCoinsReq());
 
 	}
 
