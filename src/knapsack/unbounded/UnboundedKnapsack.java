@@ -61,7 +61,7 @@ public class UnboundedKnapsack extends KnapsackAbs {
 	}
 
 	/**
-	 * Top down approach to solve the 0-1 knapsack problem
+	 * Top down approach to solve the unbounded knapsack problem
 	 * 
 	 * @param wt  is the weight array
 	 * @param val is the value array
@@ -83,7 +83,7 @@ public class UnboundedKnapsack extends KnapsackAbs {
 	}
 
 	/**
-	 * Recursive approach to solve the 0-1 knapsack problem
+	 * Recursive approach to solve the unbounded knapsack problem
 	 * 
 	 * @param wt  is the weight array
 	 * @param val is the value array
@@ -100,5 +100,4 @@ public class UnboundedKnapsack extends KnapsackAbs {
 			return Math.max(knapsack(wt, val, n - 1, W), val[n - 1] + knapsack(wt, val, n, W - wt[n - 1]));
 		}
 	}
-
 }
