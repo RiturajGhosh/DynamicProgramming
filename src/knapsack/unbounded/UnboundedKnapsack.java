@@ -22,10 +22,14 @@ public class UnboundedKnapsack extends KnapsackAbs {
 		super(wt, val, n, w);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see knapsack.KnapsackAbs#recursiveApproach()
+	 */
 	@Override
 	protected int recursiveApproach() {
-		// TODO Auto-generated method stub
-		return 0;
+		return knapsack(wt, val, n, W);
 	}
 
 	@Override
@@ -57,7 +61,7 @@ public class UnboundedKnapsack extends KnapsackAbs {
 	}
 
 	/**
-	 * Top down approach to solve the 0-1 knapsack problem
+	 * Top down approach to solve the unbounded knapsack problem
 	 * 
 	 * @param wt  is the weight array
 	 * @param val is the value array
@@ -78,4 +82,22 @@ public class UnboundedKnapsack extends KnapsackAbs {
 		return t[n][W];
 	}
 
+	/**
+	 * Recursive approach to solve the unbounded knapsack problem
+	 * 
+	 * @param wt  is the weight array
+	 * @param val is the value array
+	 * @param n   is equal to the length of the weight array or to the value arrray
+	 * @param W   is the capacity of the knapsack
+	 * @return the max value that can be fit inside knapsack with max weight as W
+	 */
+	private int knapsack(int[] wt, int[] val, int n, int W) {
+		if (W == 0 || n == 0)
+			return 0;
+		if (wt[n - 1] > W) {
+			return knapsack(wt, val, n - 1, W);
+		} else {
+			return Math.max(knapsack(wt, val, n - 1, W), val[n - 1] + knapsack(wt, val, n, W - wt[n - 1]));
+		}
+	}
 }

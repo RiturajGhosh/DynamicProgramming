@@ -1,6 +1,8 @@
 
 import knapsack.KnapsackAbs;
 import knapsack.KnapsackAbs.Type;
+import knapsack.unbounded.RodCuttingProblem;
+import knapsack.unbounded.UnboundedKnapsack;
 import knapsack.zeroone.CountOfSubsetsToGivenDiff;
 import knapsack.zeroone.CountOfSubsetsToGivenSum;
 import knapsack.zeroone.KnapSack;
@@ -26,8 +28,11 @@ public class MainClass {
 		CountOfSubsetsToGivenDiff countOfSubsetsToGivenDiff = new CountOfSubsetsToGivenDiff(new int[] { 1, 8, 5, 4, 7 },
 				5, 3);
 		System.out.println(countOfSubsetsToGivenDiff.count());
-		KnapsackAbs unboundedKnapSack = new KnapSack(new int[] { 1, 2, 3 }, new int[] { 2, 2, 3 }, 3, 3);
+		KnapsackAbs unboundedKnapSack = new UnboundedKnapsack(new int[] { 1, 2, 3 }, new int[] { 2, 2, 3 }, 3, 3);
 		System.out.println(unboundedKnapSack.orchestrateBetweenApproaches(Type.TOP_DOWN_APPROACH));
+		KnapsackAbs rodCuttingProblem = new RodCuttingProblem(new int[] { 1, 2, 3 }, new int[] { 2, 2, 3 }, 3, 4);
+		System.out.println(rodCuttingProblem.orchestrateBetweenApproaches(Type.TOP_DOWN_APPROACH));
+		System.out.println(rodCuttingProblem.orchestrateBetweenApproaches(Type.RECURSIVE_APPROACH));
 
 	}
 
