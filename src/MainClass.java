@@ -1,5 +1,6 @@
 
 import LCS.LCS;
+import LCS.LongestCommonSubString;
 import knapsack.KnapsackAbs;
 import knapsack.KnapsackAbs.Type;
 import knapsack.unbounded.CoinChangeMinNumber;
@@ -39,6 +40,8 @@ public class MainClass {
 		System.out.println(coinChangeMinNumber.minNumberOfCoinsReq());
 		LCS lcs = new LCS();
 		System.out.println(lcs.topDownLCS("abgef", "abref"));
+		LongestCommonSubString lcStr = new LongestCommonSubString();
+		System.out.println(lcStr.longestCommonSubStr("abgefhi", "rtefhk"));
 
 	}
 
