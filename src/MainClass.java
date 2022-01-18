@@ -45,6 +45,7 @@ public class MainClass {
 		System.out.println(lcStr.longestCommonSubStr("abgefhi", "rtefhk"));
 		MCM mcm = new MCM(new Integer[] { 10, 20, 30, 40 });
 		System.out.println(mcm.mcmR());
+		System.out.println(mcm.mcmM());
 
 	}
 

@@ -15,6 +15,7 @@ public class MCM {
 	private int i;
 	private int j;
 	private static Integer min = Integer.MAX_VALUE;
+	private static Integer[][] t;
 
 	public MCM(Integer[] arr) {
 		this.arr = arr;
@@ -28,6 +29,11 @@ public class MCM {
 		}
 	}
 
+	/**
+	 * Recursive approach
+	 * 
+	 * @return minimun cost of multiplication of given matrices
+	 */
 	public int mcmR() {
 		return mcmInRecursiveApproach(this.arr, this.i, this.j);
 	}
@@ -42,6 +48,42 @@ public class MCM {
 			min = Math.min(val, min);
 		}
 		return min;
+	}
 
+	/**
+	 * Memoized approach
+	 * 
+	 * @return
+	 */
+	public int mcmM() {
+		min = Integer.MAX_VALUE;
+		initiateLookupTable();
+		return mcmInMemoizedApproach(this.arr, this.i, this.j);
+	}
+
+	private void initiateLookupTable() {
+		int n = this.arr.length;
+		t = new Integer[n][n];
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				t[i][j] = -1;
+			}
+		}
+	}
+
+	private int mcmInMemoizedApproach(Integer[] arr, int i, int j) {
+		if (i >= j) {
+			return 0;
+		}
+		if (t[i][j] != -1) {
+			return t[i][j];
+		}
+		for (int k = i; k < j; k++) {
+			int temp = mcmInMemoizedApproach(arr, i, k) + mcmInMemoizedApproach(arr, k + 1, j)
+					+ (arr[i - 1] * arr[k] * arr[j]);
+			min = Math.min(temp, min);
+			t[i][j] = min;
+		}
+		return t[i][j];
 	}
 }
