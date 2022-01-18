@@ -11,6 +11,7 @@ import knapsack.zeroone.CountOfSubsetsToGivenSum;
 import knapsack.zeroone.KnapSack;
 import knapsack.zeroone.MinSubsetSumDiff;
 import knapsack.zeroone.SubsetSum;
+import mcm.MCM;
 
 public class MainClass {
 
@@ -36,12 +37,14 @@ public class MainClass {
 		KnapsackAbs rodCuttingProblem = new RodCuttingProblem(new int[] { 1, 2, 3 }, new int[] { 2, 2, 3 }, 3, 4);
 		System.out.println(rodCuttingProblem.orchestrateBetweenApproaches(Type.TOP_DOWN_APPROACH));
 		System.out.println(rodCuttingProblem.orchestrateBetweenApproaches(Type.RECURSIVE_APPROACH));
-		CoinChangeMinNumber coinChangeMinNumber = new CoinChangeMinNumber(new int[] { 1, 3, 5, 7 }, 15);
-		System.out.println(coinChangeMinNumber.minNumberOfCoinsReq());
+		CoinChangeMinNumber coinChangeMinNumber = new CoinChangeMinNumber(new int[] { 1, 2, 3 }, 4);
+		System.out.println("---------------------------------------" + coinChangeMinNumber.minNumberOfCoinsReq());
 		LCS lcs = new LCS();
 		System.out.println(lcs.topDownLCS("abgef", "abref"));
 		LongestCommonSubString lcStr = new LongestCommonSubString();
 		System.out.println(lcStr.longestCommonSubStr("abgefhi", "rtefhk"));
+		MCM mcm = new MCM(new Integer[] { 10, 20, 30, 40 });
+		System.out.println(mcm.mcmR());
 
 	}
 
