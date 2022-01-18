@@ -14,7 +14,7 @@ public class MCM {
 	private Integer[] arr;
 	private int i;
 	private int j;
-	private static Integer min = Integer.MAX_VALUE;
+
 	private static Integer[][] t;
 
 	public MCM(Integer[] arr) {
@@ -42,6 +42,7 @@ public class MCM {
 		if (i >= j) {
 			return 0;
 		}
+		Integer min = Integer.MAX_VALUE;
 		for (int k = i; k < j; k++) {
 			int val = mcmInRecursiveApproach(array, i, k) + mcmInRecursiveApproach(array, k + 1, j)
 					+ array[i - 1] * array[k] * array[j];
@@ -56,7 +57,6 @@ public class MCM {
 	 * @return
 	 */
 	public int mcmM() {
-		min = Integer.MAX_VALUE;
 		initiateLookupTable();
 		return mcmInMemoizedApproach(this.arr, this.i, this.j);
 	}
@@ -78,6 +78,7 @@ public class MCM {
 		if (t[i][j] != -1) {
 			return t[i][j];
 		}
+		Integer min = Integer.MAX_VALUE;
 		for (int k = i; k < j; k++) {
 			int temp = mcmInMemoizedApproach(arr, i, k) + mcmInMemoizedApproach(arr, k + 1, j)
 					+ (arr[i - 1] * arr[k] * arr[j]);

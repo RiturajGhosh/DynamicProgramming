@@ -12,6 +12,7 @@ import knapsack.zeroone.KnapSack;
 import knapsack.zeroone.MinSubsetSumDiff;
 import knapsack.zeroone.SubsetSum;
 import mcm.MCM;
+import mcm.PallindromePartitioning;
 
 public class MainClass {
 
@@ -43,9 +44,11 @@ public class MainClass {
 		System.out.println(lcs.topDownLCS("abgef", "abref"));
 		LongestCommonSubString lcStr = new LongestCommonSubString();
 		System.out.println(lcStr.longestCommonSubStr("abgefhi", "rtefhk"));
-		MCM mcm = new MCM(new Integer[] { 10, 20, 30, 40 });
+		MCM mcm = new MCM(new Integer[] { 40, 20, 30, 10, 30 });
 		System.out.println(mcm.mcmR());
 		System.out.println(mcm.mcmM());
+		PallindromePartitioning pp = new PallindromePartitioning("geek");
+		System.out.println(pp.ppR());
 
 	}
 
